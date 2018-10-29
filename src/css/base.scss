@@ -1,0 +1,41 @@
+//全局配色
+$brand-primary: #108ee9;
+$brand-primary-tap: #0e80d2;
+$brand-success: #6abf47;
+$brand-warning: #ffc600;
+$brand-error: #f4333c;
+$brand-important: #ff5b05; // 用于小红点
+$brand-info: #108ee9;
+
+// 色彩
+// ---
+// 文字色
+$color-text-base: #000;                  // 基本
+$color-text-base-inverse: #fff;          // 基本 - 反色
+$color-text-secondary: #a4a9b0;          // 辅助色
+$color-text-placeholder: #bbb;           // 文本框提示
+$color-text-disabled: #bbb;              // 失效
+$color-text-caption: #888;               // 辅助描述
+$color-text-paragraph: #333;             // 段落
+$color-link: $brand-primary;             // 链接
+
+// 边框色
+$border-color-base: #ddd;
+
+//边框弧度
+$border-radius-base:4px;
+
+@mixin center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin ellip{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@function px($i){
+    @return ($i/100)*1rem;
+}

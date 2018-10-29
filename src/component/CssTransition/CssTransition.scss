@@ -1,0 +1,19 @@
+
+.ui-transition-enter {
+    opacity: 0.01;
+  }
+  
+  .ui-transition-enter.ui-transition-enter-active {
+    opacity: 1;
+    transition: opacity 5 ease-in;
+  }
+  
+  .ui-transition-leave {
+    opacity: 1;
+  }
+  
+  .ui-transition-leave.ui-transition-leave-active {
+    opacity: 0.01;
+    transition: opacity 3 ease-in;
+  }
+  

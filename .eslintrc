@@ -1,0 +1,13 @@
+{
+  "extends": "lww",
+  "rules":{
+    "quotes": [
+      "off",
+      "single"
+  ],
+  "semi": [
+      "off",
+      "always"
+  ]
+  }
+}

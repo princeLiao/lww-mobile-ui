@@ -1,0 +1,17 @@
+
+@function px($i){
+    @return $i*2px
+}
+.ui-button{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: px(18);
+    line-height: px(48);
+    height: px(48);
+    border: 1px solid $border-color-base;
+    box-sizing: border-box;
+    border-radius: $border-radius-base;
+    color: #000;
+    width: 100%;
+}
