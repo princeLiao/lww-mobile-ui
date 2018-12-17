@@ -1,0 +1,51 @@
+.ui-textbox {
+    display: flex;
+    align-items: center;
+    height: 108px;
+    padding-top: 38px;
+    border-bottom: 1px solid #D0D0D0;
+    box-sizing: border-box;
+    .label {
+        font-size: 28px;
+        color: #666;
+        white-space: nowrap;
+        margin-right: 1em;
+    }
+    .extra {
+        font-size: 32px;
+        margin-left: 16px;
+    }
+    input {
+        flex: auto;
+        text-align: right;
+        font-size: 28px;
+        color: #666;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        &::-webkit-input-placeholder {
+            color: #ccc;
+        }
+    }
+    input:disabled {
+        -webkit-text-fill-color: #666;
+        &::-webkit-input-placeholder {
+            -webkit-text-fill-color: #ccc;
+        }
+    }
+    .extra {
+        font-size: 28px;
+        color: #333;
+        margin-left: 20px;
+    }
+    .arrow {
+        display: block;
+        height: 10px;
+        width: 10px;
+        border-width: 3px 3px 0 0;
+        border-color: #C2CFE9;
+        border-style: solid;
+        margin-left: 12px;
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    }
+}

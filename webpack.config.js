@@ -46,7 +46,8 @@ module.exports = (env, argv) => {
                 component: path.join(__dirname, './src/component'),
                 entry: path.join(__dirname, './src/entry'),
                 common: path.join(__dirname, './src/js/common'),
-                action: path.join(__dirname, './src/action')
+                action: path.join(__dirname, './src/action'),
+                utils: path.join(__dirname, './src/utils')
             }
         },
         module: {

@@ -1,17 +1,12 @@
 import * as React from 'react'
-import './Notification.scss';
+import './Form.scss';
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import {
-    unionClass,
-    useKeyOnly,
-    SUI
-} from "../../lib";
 /**
  * 表示一个ui组件。
- * 功能：弹出层弹窗或toast
+ * 功能：
  */
-export default class Notification extends React.Component {
+export default class Form extends React.Component {
     static propTypes = {
         style:PropTypes.object,
     }
@@ -29,7 +24,7 @@ export default class Notification extends React.Component {
             style,
             ...props
         } = this.props;
-        const wrapCLass = cx(unionClass, className);
+        const wrapCLass = cx( className);
         
         return (
                 <div style={this.setStyle(tyle)} className={wrapCLass} {...props}>

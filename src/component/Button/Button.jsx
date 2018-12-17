@@ -6,7 +6,7 @@ import {
     unionClass,
     useKeyOnly,
     SUI
-} from "../../lib";
+} from "utils";
 /**
  * 表示一个ui。
  * @internal

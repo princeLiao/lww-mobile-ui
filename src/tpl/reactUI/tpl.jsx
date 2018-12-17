@@ -2,11 +2,6 @@ import * as React from 'react'
 import './__name__.scss';
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import {
-    unionClass,
-    useKeyOnly,
-    SUI
-} from "../../lib";
 /**
  * 表示一个__displayName__组件。
  * 功能：
@@ -29,7 +24,7 @@ export default class __namePascal__ extends React.Component {
             style,
             ...props
         } = this.props;
-        const wrapCLass = cx(unionClass, className);
+        const wrapCLass = cx( className);
         
         return (
                 <div style={this.setStyle(tyle)} className={wrapCLass} {...props}>

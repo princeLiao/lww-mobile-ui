@@ -82,6 +82,9 @@ a {
 a,
 button,
 input {
+    border: none;
+    outline: none;
+    background-color: transparent;
     -webkit-tap-highlight-color: transparent;
     padding: 0;
 }
