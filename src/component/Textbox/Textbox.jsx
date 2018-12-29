@@ -42,7 +42,7 @@ class TextBox extends React.Component {
                 <label className="label" htmlFor="">{label}</label>
                 <input type={cType ? "tel" : type} required={required} disabled={disabled} defaultValue={defaultValue} onChange={this.hanleChange} name={name} maxLength={maxLength} minLength={maxLength}
                     ref={ref => {
-                        ref.reactProps = this.props;
+                        ref ? ref.reactProps = this.props : null;
                         this.inputRef = ref;
                         if (name) {
                             return refForm ? refForm[name] = ref : null

@@ -1,44 +1,45 @@
 $icon-size:36;
+$null: null; 
 .ui-toast {
     position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    font-size: px(28);
     z-index: 1999;
-    &.toast-mask{
-        left: 0;
-        top: 0;
+    &.mask-show {
+        background-color: rgba(0, 0, 0, .4);
     }
-    &.toast-nomask{
-        width: auto;
-        height: auto;
-        top: 50%;
-        left: 50%;
-    }
-    .toast-content{
-        padding: px(30);
-        border-radius: px(10);
+    .toast-content {
+        padding: px(18) px(30);
+        border-radius: px(6);
         min-width: px(120);
-        line-height: 1.5;
-        background-color: rgba(58,58,58,.9);
+        text-align: center;
+        font-size: px(28);
+        background-color: rgba(58, 58, 58, .9);
+        &.icon{
+            padding: px(30);
+            .toast-text{
+                margin-top: px(12);
+            }
+        }
+       
     }
-    .toast-icon{
-        display: block;
-        margin: 0 auto;
+    .toast-icon {
         width: px($icon-size*2);
         height: px($icon-size*2);
-    }
-    .toast-text{
-        margin-top: px(12);
-        color: #fff;
-        &.info{
-            margin-top: 0;
+        &.loading{
+            animation: loading  1s linear infinite;
         }
     }
-
+    .toast-text {
+        color: #fff;
+        line-height: 1.5;
+    }
 }
+ 
+
 

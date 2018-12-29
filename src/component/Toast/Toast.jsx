@@ -1,55 +1,22 @@
-import * as React from 'react'
-import './Toast.scss';
-import cx from 'classnames'
-import PropTypes from 'prop-types'
-import Notice from "./notice"
-import {
-    unionClass,
-    useKeyOnly,
-    SUI
-} from "utils";
-/**
- * 表示一个ui组件。
- * 功能：toast提示
- */
+import Notification from "./notification"
 
-export default class Toast extends React.Component {
-    static propTypes = {
-        style:PropTypes.object,
-    }
-    static defaultProps = {
-    }
-
-
-    constructor(props) {
-        super(props);
-    }
-    static show(){
-        const div=document.createElement("div");
-
-        document.body.appendChild(div);
-    }
-    static hide(){
-
-    }
-    static info(
-        content,
-    ){
-
-    }
-    render() {
-        const {
-            className,
-            style,
-            ...props
-        } = this.props;
-        const wrapCLass = cx(unionClass, className,'ui-toast');
-        
-        return (
-                <div  className={wrapCLass} {...props}>
-                    <Notice type="info" content="wrwtewtewte" />
-                </div>
-        );
-    }
-
+export default {
+    info: (content, duration, onClose) =>
+        Notification.show({ type: 'info', content, duration, onClose })
+    ,
+    success: (content, duration, onClose) => {
+        Notification.show({ type: 'success', content, duration, onClose })
+    },
+    fail: (content, duration, onClose) =>
+        Notification.show({ type: 'fail', content, duration, onClose })
+    ,
+    loading: (content, duration, onClose) =>
+        Notification.show({ type: 'loading', content, duration, onClose })
+    ,
+    offline: (content, duration, onClose) =>
+        Notification.show({ type: 'offline', content, duration, onClose })
+    ,
+    hide: () =>
+        Notification.destroy()
 }
+

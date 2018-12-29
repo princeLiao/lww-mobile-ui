@@ -2,11 +2,8 @@ import * as React from 'react'
 import './Toast.scss';
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import {
-    unionClass,
-    useKeyOnly,
-    SUI
-} from "utils";
+import Icon from "component/Icon"
+
 /**
  * 表示一个ui组件。
  * 功能：toast提示
@@ -16,15 +13,15 @@ export default class Notice extends React.Component {
     static propTypes = {
         style: PropTypes.object,
         type: PropTypes.oneOf([
-            'info', 'success', 'error', 'loading', 'network'
+            'info', 'success', 'fail', 'loading', 'offline'
         ]),
         content: PropTypes.any,
         //是否显示透明遮罩 
         mask: PropTypes.bool
     }
     static defaultProps = {
-        mask: true,
-        type:'info',
+        mask: false,
+        type: '',
     }
     constructor(props) {
         super(props);
@@ -38,25 +35,26 @@ export default class Notice extends React.Component {
             mask,
             ...props
         } = this.props;
-        const wrapCLass = cx(unionClass, className, 'ui-toast', mask ? "toast-mask" : "toask-nomask");
+        const wrapCLass = cx(className, 'ui-toast', mask ? "mask-show" : "");
         const icons = {
-            info: 'icon-info',
-            success: 'icon-success',
-            error: 'icon-error',
-            loading: 'icon-loading',
-            network: 'icon-network'
+            info: '',
+            success: 'success',
+            fail: 'fail',
+            loading: 'loading',
+            offline: 'dislike'
         };
         return (
             <div className={wrapCLass} {...props}>
-                <div className="toast-content">
+                <div className={cx("toast-content", icons[type] ? "icon" : "")}>
+                    {icons[type] ?
+                        <Icon className={cx('toast-icon', icons[type])} type={icons[type]} /> : null}
                     {
-                        type == "info" ? null : <i className={cx("toast-icon", icons[type])}></i>
+                        content && <div className="toast-text">
+                            {
+                                content
+                            }
+                        </div>
                     }
-                    <div className={`toast-text ${type}`}>
-                        {
-                            content
-                        }
-                    </div>
                 </div>
             </div>
         );

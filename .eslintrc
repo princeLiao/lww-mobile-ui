@@ -8,6 +8,7 @@
   "semi": [
       "off",
       "always"
-  ]
+  ],
+  "valid-jsdoc":"off"
   }
 }

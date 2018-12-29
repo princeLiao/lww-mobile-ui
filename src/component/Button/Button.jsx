@@ -71,6 +71,6 @@ export default class Button extends React.Component {
             e.preventDefault()
             return
         }
-        this.props.onClick();
+        this.props.onClick&&this.props.onClick();
     }
 }

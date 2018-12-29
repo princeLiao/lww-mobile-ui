@@ -31,7 +31,7 @@ module.exports = (env, argv) => {
         }
     ];
     const baseConfig = {
-        devtool:devMode?"false":'eval-source-map',
+        devtool:devMode?'eval-source-map':false,
         entry: {
             app: path.join(__dirname, './src/entry/index.jsx')
         },
